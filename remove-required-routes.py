@@ -3,8 +3,6 @@ import constants
 from netaddr import IPNetwork
 import sys
 
-== == == =
-
 
 def route_change(client, src_ip):
     """
@@ -15,6 +13,7 @@ def route_change(client, src_ip):
         for assoc in response['RouteTables']:
             for route in assoc['Routes']:
                 try:
+                    # Should this be inside the if? You don't need to print routes that aren't being changed, correct?
                     print("Route before change: ", route)
                     if (src_ip in IPNetwork(route['DestinationCidrBlock'])):
                         response = client.delete_route(
@@ -22,6 +21,7 @@ def route_change(client, src_ip):
                             RouteTableId=assoc['RouteTableId'])
                     print("Route after change: ", route)
                 except BaseException:
+                    # Could you make this a little more detailed so you know what didn't work?
                     continue
 
 
