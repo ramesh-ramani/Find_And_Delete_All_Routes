@@ -7,9 +7,7 @@ def route_change(client,src_ip):
     Extract the routes and eni information from the AWS API
     """
     for vpc in constants.VPC_FILTER:
-    	response = client.describe_route_tables(
-        	Filters=constants.VPC_FILTER)
-
+    	response = client.describe_route_tables(Filters=vpc)
         for assoc in response['RouteTables']:
             for route in assoc['Routes']:
                 try:
