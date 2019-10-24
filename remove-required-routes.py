@@ -15,13 +15,14 @@ def route_change(client, src_ip):
         for assoc in response['RouteTables']:
             for route in assoc['Routes']:
                 try:
-                    print("Route before change: ", route)
                     if (src_ip in IPNetwork(route['DestinationCidrBlock'])):
+                        print("Route before change: ", route)
                         response = client.delete_route(
                             DestinationCidrBlock=route['DestinationCidrBlock'],
                             RouteTableId=assoc['RouteTableId'])
                     print("Route after change: ", route)
                 except BaseException:
+                    print("Error extracting route information. Continuing")
                     continue
 
 
