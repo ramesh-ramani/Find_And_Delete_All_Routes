@@ -3,8 +3,6 @@ import constants
 from netaddr import IPNetwork
 import sys
 
-== == == =
-
 
 def route_change(client, src_ip):
     """
@@ -16,6 +14,7 @@ def route_change(client, src_ip):
             for route in assoc['Routes']:
                 try:
                     if (src_ip in IPNetwork(route['DestinationCidrBlock'])):
+                        print("Route before change: ", route)
                         print("Route before change: ", route)
                         response = client.delete_route(
                             DestinationCidrBlock=route['DestinationCidrBlock'],
