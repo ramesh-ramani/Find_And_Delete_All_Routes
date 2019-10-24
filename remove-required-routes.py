@@ -10,6 +10,7 @@ def route_change(client, src_ip):
     """
     for vpc in constants.VPC_FILTER:
         response = client.describe_route_tables(Filters=vpc)
+        print(response)
         for assoc in response['RouteTables']:
             for route in assoc['Routes']:
                 try:
