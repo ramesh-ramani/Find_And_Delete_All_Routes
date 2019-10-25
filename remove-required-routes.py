@@ -33,8 +33,9 @@ def route_change(client, src_ip):
             for route in assoc['Routes']:
                 try:
                     # This if condition is really convoluted. Here is what I would suggest:
-                    # if src_ip in blacklisted_ips:
-                    #   continue
+                    # for ip in blacklisted_ips:
+                    #   if src_ip == ip:
+                    #     continue
                     # if IPNetwork(src_ip) in IPNetwork(route['DestinationCidrBlock'])):
                     #   routes_to_delete_dict[route['DestinationCidrBlock']] = assoc['RouteTableId']
                     if (src_ip in IPNetwork(route['DestinationCidrBlock'])) and (IPNetwork(route['DestinationCidrBlock'])!= black_lst_ip_10) and (IPNetwork(route['DestinationCidrBlock'])!= black_lst_ip_0):
