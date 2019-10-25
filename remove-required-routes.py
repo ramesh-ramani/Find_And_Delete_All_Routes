@@ -15,6 +15,7 @@ def delete_routes(client,routes_to_delete_dict):
 
 
 def route_change(client, src_ip):
+
     black_lst_ips = [
         IPNetwork("0.0.0.0/0"),
         IPNetwork("10.0.0.0/8")
@@ -38,15 +39,21 @@ def route_change(client, src_ip):
                         continue
                     if (src_ip in IPNetwork(route['DestinationCidrBlock'])):
                         print("Route before change: ", route, ",VPC ID: ", vpc['Values'][0], ",Route Table ID: ", assoc['RouteTableId'])
+                        # Are the dictionary items supposed to be lists?
                         routes_to_delete_dict[route['DestinationCidrBlock']] = [assoc['RouteTableId']]
                     #print("Route after change: ", route)
                 except:
                     continue
 
+        # This is where using something like click.confirm() would be amazing. You don't need to do this stuff.
+        # Also, user_response should really just compare the first letter. So:
+        # if user_response[0].lower() == 'y':
+        #   etc
         while True:
             user_response = input("Are you sure you want to proceed with the change?(Y/N): ")
             if user_response[0].lower() == 'y':
                print("Hold on. Deleting routes!")
+               # time is not being imported
                time.wait(30)
                break
             elif user_response[0].lower() == 'n':
