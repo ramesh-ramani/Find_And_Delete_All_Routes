@@ -56,7 +56,7 @@ def route_change(client, src_ip):
             if user_response[0].lower() == 'y':
                print("Hold on. Deleting routes!")
                # time is not being imported
-               time.wait(30)
+               time.sleep(30)
                break
             elif user_response[0].lower() == 'n':
                print("Ok. Not making changes for this VPC")
