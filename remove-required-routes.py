@@ -28,6 +28,9 @@ def route_change(client, src_ip):
     
            
     for vpc in constants.VPC_FILTER:
+        print("\n**************\n")
+        print("Changes to be made to VPC: ",vpc['Values'])
+        print("\n**************\n")
         routes_to_delete_dict={}
         response = client.describe_route_tables(Filters=[vpc])
         #print(response)
@@ -37,7 +40,7 @@ def route_change(client, src_ip):
                     bool_list = [IPNetwork(route['DestinationCidrBlock']) == i for i in black_lst_ips]
                     if any(bool_list):
                         continue
-                    if (src_ip in IPNetwork(route['DestinationCidrBlock'])):
+                    if (src_ip == IPNetwork(route['DestinationCidrBlock'])):
                         print("Route before change: ", route, ",VPC ID: ", vpc['Values'][0], ",Route Table ID: ", assoc['RouteTableId'])
                         # Are the dictionary items supposed to be lists?
                         routes_to_delete_dict[route['DestinationCidrBlock']] = [assoc['RouteTableId']]
@@ -45,11 +48,10 @@ def route_change(client, src_ip):
                 except:
                     continue
 
-        # This is where using something like click.confirm() would be amazing. You don't need to do this stuff.
-        # Also, user_response should really just compare the first letter. So:
-        # if user_response[0].lower() == 'y':
-        #   etc
         while True:
+            if not routes_to_delete_dict:
+               print("No changes to make!")
+               break
             user_response = input("Are you sure you want to proceed with the change?(Y/N): ")
             if user_response[0].lower() == 'y':
                print("Hold on. Deleting routes!")
@@ -59,7 +61,7 @@ def route_change(client, src_ip):
             elif user_response[0].lower() == 'n':
                print("Ok. Not making changes for this VPC")
                break
-        delete_routes(client,routes_to_delete_dict)
+#        delete_routes(client,routes_to_delete_dict)
 
 
 
