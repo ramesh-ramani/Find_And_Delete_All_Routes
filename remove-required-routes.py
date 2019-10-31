@@ -27,7 +27,7 @@ def delete_routes(client,routes_to_delete_dict):
         print("Route Deleted: ",response)
     print("Routes Deleted!")
     revert_routes_check = input("\nDo do you want to revert your change?(Y/N): ") 
-    while True():
+    while True:
         if revert_routes_check[0].lower() == 'n':
            print("Exiting!")
            sys.exit()
