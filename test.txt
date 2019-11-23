@@ -1,5 +1,0 @@
-Route before change:  {'DestinationCidrBlock': '10.27.0.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-06946'} ,VPC ID:  vpc-24 ,Route Table ID:  rtb-a2
-Route before change:  {'DestinationCidrBlock': '10.27.4.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-098c7'} ,VPC ID:  vpc-24 ,Route Table ID:  rtb-a2
-Route before change:  {'DestinationCidrBlock': '10.27.8.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-07a92'} ,VPC ID:  vpc-24 ,Route Table ID:  rtb-a2
-Route before change:  {'DestinationCidrBlock': '10.27.12.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-0a6b9'} ,VPC ID:  vpc-24 ,Route Table ID:  rtb-a2
-Route before change:  {'DestinationCidrBlock': '10.27.16.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-07f61'} ,VPC ID:  vpc-24 ,Route Table ID:  rtb-a2
