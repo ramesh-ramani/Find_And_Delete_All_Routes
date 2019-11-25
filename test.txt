@@ -1,0 +1,9 @@
+Route before change:  {'DestinationCidrBlock': '10.27.0.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-1236
+Route before change:  {'DestinationCidrBlock': '10.27.4.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
+Route before change:  {'DestinationCidrBlock': '10.27.8.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
+Route before change:  {'DestinationCidrBlock': '10.27.12.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  123
+Route before change:  {'DestinationCidrBlock': '10.27.16.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
+Route before change:  {'DestinationCidrBlock': '10.27.20.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
+Route before change:  {'DestinationCidrBlock': '10.27.24.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
+Route before change:  {'DestinationCidrBlock': '10.27.28.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
+Route before change:  {'DestinationCidrBlock': '10.27.0.0/22', 'Origin': 'CreateRoute', 'State': 'active', 'VpcPeeringConnectionId': 'pcx-123'} ,VPC ID:  vpc123 ,Route Table ID:  rtb-123
